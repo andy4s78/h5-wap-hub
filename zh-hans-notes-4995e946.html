@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>875直播 · 简明访问指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f9fd;
+      color: #1d2b3a;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 0.5rem 3rem;
+    }
+
+    /* 导航 */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem 0.5rem;
+      padding: 0.5rem 0 1rem;
+      border-bottom: 2px solid #b8dce8;
+      margin-bottom: 2.5rem;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #0f5b6a;
+      letter-spacing: 0.5px;
+      background: #d9edf4;
+      padding: 0.25rem 1rem 0.25rem 0.9rem;
+      border-radius: 30px;
+      border: 1px solid #a0ccdd;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1d4e5a;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+      padding-bottom: 0.15rem;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #2b8b9e;
+      color: #0b4753;
+    }
+
+    /* hero 简明卡片 */
+    .hero-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 6px 18px rgba(18, 98, 113, 0.08);
+      padding: 2.2rem 2rem 2.5rem;
+      margin-bottom: 2.5rem;
+      border-left: 6px solid #2b9aae;
+      transition: box-shadow 0.2s;
+    }
+
+    .hero-card h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0b4b57;
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-card .sub {
+      font-size: 1.05rem;
+      color: #2f5d69;
+      margin-bottom: 1.25rem;
+      border-left: 3px solid #7ac1d4;
+      padding-left: 1rem;
+      background: #eaf4f9;
+      border-radius: 0 12px 12px 0;
+      line-height: 1.6;
+    }
+
+    .hero-card p {
+      margin-top: 0.8rem;
+      max-width: 680px;
+    }
+
+    .hero-card a {
+      color: #0f6b7c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #8ac8db;
+      font-weight: 500;
+    }
+
+    .hero-card a:hover {
+      color: #064452;
+      text-decoration-color: #064452;
+    }
+
+    /* 三场景网格卡片 */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 2.8rem;
+    }
+
+    .scene-card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.8rem 1.5rem 2rem;
+      box-shadow: 0 4px 14px rgba(28, 97, 112, 0.06);
+      border-top: 4px solid #89c6d9;
+      transition: transform 0.15s ease, box-shadow 0.2s;
+    }
+
+    .scene-card:nth-child(2) {
+      border-top-color: #3ba9be;
+    }
+
+    .scene-card:nth-child(3) {
+      border-top-color: #58b7cc;
+    }
+
+    .scene-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(21, 93, 107, 0.08);
+    }
+
+    .scene-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #124c59;
+      margin-bottom: 0.75rem;
+    }
+
+    .scene-card h3 span {
+      background: #d5eef5;
+      border-radius: 40px;
+      padding: 0 0.6rem;
+      font-size: 0.9rem;
+      color: #0b5e6e;
+    }
+
+    .scene-card p {
+      color: #2b4d57;
+      font-size: 0.95rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      margin-top: 0.9rem;
+      background: #dff0f6;
+      border-radius: 30px;
+      padding: 0.2rem 0.9rem;
+      font-size: 0.8rem;
+      color: #0a5b6a;
+      font-weight: 500;
+    }
+
+    /* 说明/提醒区块 */
+    .info-block {
+      background: #e3f0f5;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid #bddbe7;
+    }
+
+    .info-block h2 {
+      font-size: 1.4rem;
+      color: #0a4f5c;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .info-block ul {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .info-block li {
+      padding-left: 1.6rem;
+      position: relative;
+      color: #1f4855;
+    }
+
+    .info-block li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #1f889e;
+      font-weight: bold;
+    }
+
+    .info-block a {
+      color: #0b6d80;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #84c2d6;
+    }
+
+    .info-block a:hover {
+      color: #043d49;
+    }
+
+    /* 常见说明摘要 */
+    .faq-mini {
+      background: white;
+      border-radius: 20px;
+      padding: 1.5rem 1.8rem 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      border: 1px solid #cbe3ed;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.3rem;
+      color: #0f4d5a;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #d7e7f0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      min-width: 80px;
+      font-weight: 600;
+      color: #116d80;
+      font-size: 0.9rem;
+    }
+
+    .faq-a {
+      color: #254e5b;
+      font-size: 0.95rem;
+    }
+
+    .faq-a a {
+      color: #0e6d81;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #98d0e0;
+    }
+
+    .faq-a a:hover {
+      color: #03434f;
+    }
+
+    /* footer */
+    .footer-note {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #497482;
+      border-top: 1px solid #c6dce7;
+      padding-top: 2rem;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-note span {
+      background: #d2e6ef;
+      padding: 0.1rem 0.7rem;
+      border-radius: 50px;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.2rem 0.2rem 2.5rem;
+      }
+
+      .nav-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.6rem;
+      }
+
+      .nav-links {
+        justify-content: center;
+        gap: 1rem 1.5rem;
+      }
+
+      .hero-card {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .hero-card h1 {
+        font-size: 1.65rem;
+      }
+
+      .scene-grid {
+        gap: 1.2rem;
+      }
+
+      .info-block {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .faq-mini {
+        padding: 1.2rem 1rem 1.6rem;
+      }
+
+      .faq-item {
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+
+      .faq-q {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .nav-links {
+        gap: 0.6rem 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .hero-card .sub {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- 导航 -->
+    <nav class="nav-bar">
+      <div class="nav-brand">📺 875·简明站</div>
+      <ul class="nav-links">
+        <li><a href="#guide">指南</a></li>
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#notes">提醒</a></li>
+        <li><a href="#faq">常见说明</a></li>
+      </ul>
+    </nav>
+
+    <!-- hero + 核心介绍 -->
+    <div class="hero-card" id="guide">
+      <h1>875直播 · 访问简明指南</h1>
+      <div class="sub">
+        面向希望快速了解站点特点与访问方式的用户，本文从实际使用角度梳理三个常见场景与必要提醒。
+      </div>
+      <p>
+        <a href="https://zh-hans-857.com">875直播</a> 是一个提供实时内容浏览的在线平台，其界面以信息聚合和频道分类见长。对于初次接触的用户，建议先熟悉页面布局与分类标签，这有助于更快定位感兴趣的内容。以下归纳了三个典型交互场景，并附上一些日常访问的小提醒。
+      </p>
+    </div>
+
+    <!-- 三个场景模块 网格卡片 -->
+    <div class="scene-grid" id="scenes">
+      <div class="scene-card">
+        <h3>📡 频道浏览 <span>场景一</span></h3>
+        <p>通过顶部导航或侧边分类，可以快速切换不同主题的直播流。每个频道卡片都包含当前状态与简介，适合先浏览再深入。</p>
+        <div class="tag">分类过滤 · 实时预览</div>
+      </div>
+      <div class="scene-card">
+        <h3>🔍 内容发现 <span>场景二</span></h3>
+        <p>利用搜索或热门推荐模块，探索当前活跃度较高的直播内容。推荐区域会动态更新，帮助用户发现新的兴趣点。</p>
+        <div class="tag">趋势推荐 · 关键词检索</div>
+      </div>
+      <div class="scene-card">
+        <h3>📋 信息查阅 <span>场景三</span></h3>
+        <p>部分频道附带节目表或简介信息，适合需要提前了解内容方向的用户。信息区通常位于播放器下方或独立页面内。</p>
+        <div class="tag">节目说明 · 频道简介</div>
+      </div>
+    </div>
+
+    <!-- 常见说明/提醒区块 -->
+    <div class="info-block" id="notes">
+      <h2>🧭 访问提醒与建议</h2>
+      <ul>
+        <li>建议使用最新版浏览器访问 <a href="https://zh-hans-857.com">875直播</a>，部分旧版本可能无法完整显示页面组件。</li>
+        <li>网络环境会影响直播加载速度，若遇到缓冲可尝试切换线路或刷新页面。</li>
+        <li>平台内容由各频道自行维护，分类与更新时间可能存在差异，请以实际页面信息为准。</li>
+        <li>如遇到页面布局异常，可尝试清除浏览器缓存或检查广告拦截扩展是否误伤页面样式。</li>
+      </ul>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini" id="faq">
+      <h2>❓ 常见说明摘要</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">如何开始？</div>
+        <div class="faq-a">直接进入 <a href="https://zh-hans-857.com">875直播</a> 主页即可看到频道列表，点击任意卡片即可进入对应内容页。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">移动端适配？</div>
+        <div class="faq-a">页面已针对移动设备做响应式布局，在手机和平板浏览器上均可获得较完整的浏览体验。</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">内容是否稳定？</div>
+        <div class="faq-a">直播内容由各频道提供，在线状态和节目安排存在自然波动，建议以页面实时状态为准。</div>
+      </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      <span>基于实际使用体验整理 · 内容仅供参考</span>
+    </div>
+
+  </div>
+</body>
+</html>
